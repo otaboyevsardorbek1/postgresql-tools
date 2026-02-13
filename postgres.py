@@ -28,36 +28,36 @@ import time
 import psycopg2
 import psycopg2.pool
 import psycopg2.extras
-import hashlib
+import hashlib# pyright: ignore[reportUnusedImport]
 import logging
 import datetime
 import threading
 import subprocess
 import urllib.parse
 import shutil
-import pickle
-import queue
+import pickle # pyright: ignore[reportUnusedImport]
+import queue# pyright: ignore[reportUnusedImport]
 import signal
 import atexit
-import platform
-import socket
-import ssl
+import platform # pyright: ignore[reportUnusedImport]
+import socket # pyright: ignore[reportUnusedImport]
+import ssl # pyright: ignore[reportUnusedImport]
 import secrets
 import string
 import re
 import csv
-import ipaddress
-import requests
+import ipaddress # pyright: ignore[reportUnusedImport]
+import requests # pyright: ignore[reportUnusedImport]
 import concurrent.futures
-from typing import Dict, List, Tuple, Optional, Any, Union, Callable
+from typing import Dict, List, Tuple, Optional, Any, Union, Callable # pyright: ignore[reportUnusedImport]
 from contextlib import contextmanager, closing
-from dataclasses import dataclass, field, asdict
-from enum import Enum, auto
-from prettytable import PrettyTable
+from dataclasses import dataclass, field, asdict # pyright: ignore[reportUnusedImport]
+from enum import Enum, auto # pyright: ignore[reportUnusedImport]
+from prettytable import PrettyTable # pyright: ignore[reportUnusedImport]
 from colorama import init, Fore, Back, Style
-import getpass
+import getpass # pyright: ignore[reportUnusedImport]
 from functools import wraps
-from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod # pyright: ignore[reportUnusedImport]
 
 # ============================================================================
 # KONFIGURATSIYA - MAKSIMAL SAMARADORLIK UCHUN
@@ -133,10 +133,10 @@ class Config:
     def __post_init__(self):
         """Dinamik sozlamalarni initializatsiya qilish"""
         timestamp = datetime.datetime.now().strftime('%Y%m%d')
-        self.LOG_FILE = f"{self.LOG_DIR}/pg_ultimate_{timestamp}.log"
-        self.DATABASE_URLS_FILE = f"{self.CONFIG_DIR}/database_urls.json"
-        self.DEPLOYMENTS_FILE = f"{self.CONFIG_DIR}/deployments.json"
-        self.USERS_FILE = f"{self.CONFIG_DIR}/users.json"
+        self.LOG_FILE = f"{self.LOG_DIR}/pg_ultimate_{timestamp}.log" # pyright: ignore[reportConstantRedefinition, reportUnusedImport]
+        self.DATABASE_URLS_FILE = f"{self.CONFIG_DIR}/database_urls.json" 
+        self.DEPLOYMENTS_FILE = f"{self.CONFIG_DIR}/deployments.json" 
+        self.USERS_FILE = f"{self.CONFIG_DIR}/users.json" # pyright: ignore[reportUnusedImport]
         self.ROLES_FILE = f"{self.CONFIG_DIR}/roles.json"
         self.METRICS_FILE = f"{self.CONFIG_DIR}/metrics.json"
         self.CACHE_FILE = f"{self.CONFIG_DIR}/cache.pickle"
